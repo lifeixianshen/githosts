@@ -36,30 +36,30 @@ class gitip:
         soup = BeautifulSoup(response.text, features = 'lxml')
         ips = soup.find_all('li')
         for i in range(4):
-            self.ip_list.append(ips[i].text + '    assets-cdn.github.com')
+            self.ip_list.append(f'{ips[i].text}    assets-cdn.github.com')
     def get_4(self):
         response = requests.get(self.ip_4, headers = self.header)
         soup = BeautifulSoup(response.text, features = 'lxml')
         ip = soup.find_all('ul', {'class': 'comma-separated'})[0].text
-        lip=int(len(ip)/4)
-        ip=ip[0:lip]
-        
+        lip = len(ip) // 4
+        ip = ip[:lip]
+
         #curadress > p:nth-child(1) > a
         #curadress > p:nth-child(2) > a
-        self.ip_list.append(ip + '    raw.githubusercontent.com')
-        self.ip_list.append(ip + '    gist.githubusercontent.com')
-        self.ip_list.append(ip + '    gitst.githubusercontent.com')
-        self.ip_list.append(ip + '    cloud.githubusercontent.com')
-        self.ip_list.append(ip + '    camo.githubusercontent.com')
-        self.ip_list.append(ip + '    avatars0.githubusercontent.com')
-        self.ip_list.append(ip + '    avatars1.githubusercontent.com')
-        self.ip_list.append(ip + '    avatars2.githubusercontent.com')
-        self.ip_list.append(ip + '    avatars3.githubusercontent.com')
-        self.ip_list.append(ip + '    avatars4.githubusercontent.com')
-        self.ip_list.append(ip + '    avatars5.githubusercontent.com')
-        self.ip_list.append(ip + '    avatars6.githubusercontent.com')
-        self.ip_list.append(ip + '    avatars7.githubusercontent.com')
-        self.ip_list.append(ip + '    avatars8.githubusercontent.com')
+        self.ip_list.append(f'{ip}    raw.githubusercontent.com')
+        self.ip_list.append(f'{ip}    gist.githubusercontent.com')
+        self.ip_list.append(f'{ip}    gitst.githubusercontent.com')
+        self.ip_list.append(f'{ip}    cloud.githubusercontent.com')
+        self.ip_list.append(f'{ip}    camo.githubusercontent.com')
+        self.ip_list.append(f'{ip}    avatars0.githubusercontent.com')
+        self.ip_list.append(f'{ip}    avatars1.githubusercontent.com')
+        self.ip_list.append(f'{ip}    avatars2.githubusercontent.com')
+        self.ip_list.append(f'{ip}    avatars3.githubusercontent.com')
+        self.ip_list.append(f'{ip}    avatars4.githubusercontent.com')
+        self.ip_list.append(f'{ip}    avatars5.githubusercontent.com')
+        self.ip_list.append(f'{ip}    avatars6.githubusercontent.com')
+        self.ip_list.append(f'{ip}    avatars7.githubusercontent.com')
+        self.ip_list.append(f'{ip}    avatars8.githubusercontent.com')
         
 
 if __name__ == '__main__':
